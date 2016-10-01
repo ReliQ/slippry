@@ -5,10 +5,10 @@
   "homepage": "http://dev.reliqarts.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/reliq/slippry.git"
+    "url": "git://github.com/reliq/slippry-no-compass.git"
   },
   "bugs": {
-    "url": "https://github.com/reliq/slippry/issues"
+    "url": "https://github.com/reliq/slippry-no-compass/issues"
   },
   "license": "MIT",
   "engines": {

@@ -1,14 +1,14 @@
 {
-  "name": "slippry",
+  "name": "slippry-no-compass",
   "version": "v1.3.1",
-  "author": "Lukas Jakob Hafner <luki@booncon.com>",
-  "homepage": "http://slippry.com",
+  "author": "ReliQ <reliq@reliqarts.com>",
+  "homepage": "http://dev.reliqarts.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/booncon/slippry.git"
+    "url": "git://github.com/reliq/slippry.git"
   },
   "bugs": {
-    "url": "https://github.com/booncon/slippry/issues"
+    "url": "https://github.com/reliq/slippry/issues"
   },
   "license": "MIT",
   "engines": {

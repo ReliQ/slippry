@@ -1,14 +1,13 @@
-/**
- * @preserve
+/** @preserve
  *
- * slippry v1.2.1 - Simple responsive content slider
+ * slippry v1.3.1 - Responsive content slider for jQuery
  * http://slippry.com
  *
- * Author(s): Lukas Jakob Hafner - @saftsaak 
+ * Authors: Lukas Jakob Hafner - @saftsaak
+ *          Thomas Hurd - @SeenNotHurd
  *
- * Copyright 2013, booncon oy - http://booncon.com
+ * Copyright 2015, booncon oy - http://booncon.com
  *
- * Thanks @ http://bxslider.com for the inspiration!
  *
  * Released under the MIT license - http://opensource.org/licenses/MIT
  */
@@ -84,7 +83,7 @@
 
   $.fn.slippry = function (options) {
     var slip, el, prepareFiller, getFillerProportions, init, updateCaption, initPager, initControls, ready, transitionDone, whichTransitionEvent,
-      initCaptions, updatePager, setFillerProportions, doTransition, updateSlide, updateControls, updatePos, supports, preload, start, elFromSel, doKens;
+      initCaptions, updatePager, setFillerProportions, doTransition, updateSlide, openSlide, updateControls, updatePos, supports, preload, start, elFromSel, doKens;
 
     // reference to the object calling the function
     el = this;
@@ -295,24 +294,24 @@
           slip.vars.autodelay = false;
           slip.vars.timer = window.setInterval(function () {
             slip.vars.trigger = 'auto';
-            el.goToSlide(slip.settings.autoDirection);
+            openSlide(slip.settings.autoDirection);
           }, slip.settings.pause);
         }, slip.vars.autodelay ? slip.settings.autoHoverDelay : slip.settings.autoDelay);
-      }
-      if (slip.settings.autoHover) {
-        slip.vars.slideWrapper.unbind('mouseenter').unbind('mouseleave').bind('mouseenter', function () {
-          if (slip.vars.timer !== undefined) {
-            slip.vars.hoverStop = true;
-            el.stopAuto();
-          } else {
-            slip.vars.hoverStop = false;
-          }
-        }).bind('mouseleave', function () {
-          if (slip.vars.hoverStop) {
-            slip.vars.autodelay = true;
-            el.startAuto();
-          }
-        });
+        if (slip.settings.autoHover) {
+          slip.vars.slideWrapper.unbind('mouseenter').unbind('mouseleave').bind('mouseenter', function () {
+            if (slip.vars.timer !== undefined) {
+              slip.vars.hoverStop = true;
+              el.stopAuto();
+            } else {
+              slip.vars.hoverStop = false;
+            }
+          }).bind('mouseleave', function () {
+            if (slip.vars.hoverStop) {
+              slip.vars.autodelay = true;
+              el.startAuto();
+            }
+          });
+        }
       }
     };
 
@@ -349,6 +348,11 @@
       }
       slip.vars.old.removeClass(slip.settings.transClass);
       slip.settings.onSlideAfter.call(undefined, slip.vars.active, slip.vars.old.index(), slip.vars.active.index());
+      if (slip.settings.auto) {
+        if (!slip.vars.hoverStop || slip.vars.hoverStop === undefined){
+          el.startAuto();
+        }
+      }
     };
 
     doTransition = function () {
@@ -469,8 +473,7 @@
     };
 
     updatePos = function (slide) {
-      slip.vars.first = false;
-      slip.vars.last = false;
+      slip.vars.first = slip.vars.last = false;
       if ((slide === 'prev') || (slide === 0)) {
         slip.vars.first = true;
       } else if ((slide === 'next') || (slide === slip.vars.count - 1)) {
@@ -478,17 +481,22 @@
       }
     };
 
-    el.goToSlide = function (slide) {
-      var current;
+    openSlide = function (slide) {
+      var current, direction;
       if (!slip.vars.moving) {
+        if (slip.vars.trigger !== 'auto') {
+          el.stopAuto();
+        }
         current = slip.vars.active.index();
         if (slide === 'prev') {
+          direction = slide;
           if (current > 0) {
             slide = current - 1;
           } else if (slip.settings.loop) {
             slide = slip.vars.count - 1;
           }
         } else if (slide === 'next') {
+          direction = slide;
           if (current < slip.vars.count - 1) {
             slide = current + 1;
           } else if (slip.settings.loop) {
@@ -496,13 +504,14 @@
           }
         } else {
           slide = slide - 1;
+          direction = slide < current ? 'prev' : 'next';
         }
         slip.vars.jump = false;
         if ((slide !== 'prev') && (slide !== 'next') && ((slide !== current) || (slip.vars.fresh))) {
           updatePos(slide);
           slip.vars.old = slip.vars.active;
           slip.vars.active = $(slip.vars.slides[slide]);
-          if (((current === 0) && (slide === slip.vars.count - 1)) || ((current === slip.vars.count - 1) && (slide === 0))) {
+          if (((current === 0) && (direction === 'prev')) || ((current === slip.vars.count - 1) && (direction === 'next'))) {
             slip.vars.jump = true;
           }
           doTransition();
@@ -510,12 +519,19 @@
       }
     };
 
+    el.goToSlide = function (slide) {
+      slip.vars.trigger = 'external';
+      openSlide(slide);
+    };
+
     el.goToNextSlide = function () {
-      el.goToSlide('next');
+      slip.vars.trigger = 'external';
+      openSlide('next');
     };
 
     el.goToPrevSlide = function () {
-      el.goToSlide('prev');
+      slip.vars.trigger = 'external';
+      openSlide('prev');
     };
 
     initPager = function () {
@@ -529,7 +545,7 @@
         slip.vars.slippryWrapper.append(pager);
         $('.' + slip.settings.pagerClass + ' a', slip.vars.slippryWrapper).click(function () {
           slip.vars.trigger = 'pager';
-          el.goToSlide(parseInt(this.hash.split('#')[1], 10));
+          openSlide(parseInt(this.hash.split('#')[1], 10));
           return false;
         });
         updatePager();
@@ -545,7 +561,7 @@
         );
         $('.' + slip.settings.controlClass + ' a', slip.vars.slippryWrapper).click(function () {
           slip.vars.trigger = 'controls';
-          el.goToSlide(this.hash.split('#')[1]);
+          openSlide(this.hash.split('#')[1]);
           return false;
         });
         updateControls();
@@ -564,7 +580,7 @@
 
     // actually show the first slide
     start = function () {
-      el.goToSlide(slip.vars.active.index() + 1);
+      openSlide(slip.vars.active.index() + 1);
     };
 
     // wait for images, iframes to be loaded

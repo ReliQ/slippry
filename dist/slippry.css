@@ -1,348 +1,119 @@
-/**
- *
- * slippry v1.3.1 - Responsive content slider for jQuery
- * http://slippry.com
- *
- * Authors: Lukas Jakob Hafner - @saftsaak
- *          Thomas Hurd - @SeenNotHurd
- *
- * Copyright 2015, booncon oy - http://booncon.com
- *
- *
- * Released under the MIT license - http://opensource.org/licenses/MIT
- */
-/* kenBurns animations, very basic */
-@-webkit-keyframes left-right {
-  0% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); }
-  100% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); } }
-@-moz-keyframes left-right {
-  0% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); }
-  100% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); } }
-@-ms-keyframes left-right {
-  0% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); }
-  100% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); } }
-@keyframes left-right {
-  0% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); }
-  100% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); } }
-@-webkit-keyframes right-left {
-  0% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); }
-  100% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); } }
-@-moz-keyframes right-left {
-  0% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); }
-  100% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); } }
-@-ms-keyframes right-left {
-  0% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); }
-  100% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); } }
-@keyframes right-left {
-  0% {
-    -moz-transform: translateY(0%) translateX(10%);
-    -ms-transform: translateY(0%) translateX(10%);
-    -webkit-transform: translateY(0%) translateX(10%);
-    transform: translateY(0%) translateX(10%); }
-  100% {
-    -moz-transform: translateY(-20%) translateX(-10%);
-    -ms-transform: translateY(-20%) translateX(-10%);
-    -webkit-transform: translateY(-20%) translateX(-10%);
-    transform: translateY(-20%) translateX(-10%); } }
-/* added to the original element calling slippry */
-.sy-box.sy-loading {
-  background: url("/images/sy-loader.gif") 50% 50% no-repeat;
-  -moz-background-size: 32px;
-  -o-background-size: 32px;
-  -webkit-background-size: 32px;
-  background-size: 32px;
-  min-height: 40px; }
-  .sy-box.sy-loading .sy-slides-wrap, .sy-box.sy-loading .sy-pager {
-    visibility: hidden; }
+/*
+Error: Undefined mixin 'transform'.
+        on line 53 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss, in `transform'
+        from line 53 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss, in `@content'
+        from line 26 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss, in `keyframes'
+        from line 51 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss
 
-/* element that wraps the slides */
-.sy-slides-wrap {
-  position: relative;
-  height: 100%;
-  width: 100%; }
-  .sy-slides-wrap:hover .sy-controls {
-    display: block; }
+48: }
+49: 
+50: /* kenBurns animations, very basic *\/
+51: @include keyframes(left-right) {
+52:   0% {
+53:     @include transform(translateY(-20%) translateX(-10%));
+54:   }
+55:   100% {
+56:     @include transform(translateY(0%) translateX(10%));
+57:   }
+58: }
 
-/* element that crops the visible area to the slides */
-.sy-slides-crop {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  overflow: hidden; }
-
-/* list containing the slides */
-.sy-list {
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute; }
-  .sy-list.horizontal {
-    -moz-transition: left ease;
-    -o-transition: left ease;
-    -webkit-transition: left ease;
-    transition: left ease; }
-  .sy-list.vertical {
-    -moz-transition: top ease;
-    -o-transition: top ease;
-    -webkit-transition: top ease;
-    transition: top ease; }
-
-/* single slide */
-.sy-slide {
-  position: absolute;
-  width: 100%;
-  z-index: 2; }
-  .sy-slide.kenburns {
-    width: 140%;
-    left: -20%; }
-    .sy-slide.kenburns.useCSS {
-      -moz-transition-property: opacity;
-      -o-transition-property: opacity;
-      -webkit-transition-property: opacity;
-      transition-property: opacity; }
-      .sy-slide.kenburns.useCSS.sy-ken:nth-child(1n) {
-        -webkit-animation-name: left-right;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-name: left-right;
-        -moz-animation-fill-mode: forwards;
-        -o-animation-name: left-right;
-        -o-animation-fill-mode: forwards;
-        animation-name: left-right;
-        animation-fill-mode: forwards; }
-      .sy-slide.kenburns.useCSS.sy-ken:nth-child(2n) {
-        -webkit-animation-name: right-left;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-name: right-left;
-        -moz-animation-fill-mode: forwards;
-        -o-animation-name: right-left;
-        -o-animation-fill-mode: forwards;
-        animation-name: right-left;
-        animation-fill-mode: forwards; }
-  .sy-slide.sy-active {
-    z-index: 3; }
-  .sy-slide > img {
-    margin: 0;
-    padding: 0;
-    display: block;
-    width: 100%;
-    border: 0; }
-  .sy-slide > a {
-    margin: 0;
-    padding: 0;
-    display: block;
-    width: 100%; }
-    .sy-slide > a > img {
-      margin: 0;
-      padding: 0;
-      display: block;
-      width: 100%;
-      border: 0; }
-
-/* next/ prev buttons, with arrows and clickable area a lot larger than the visible buttons */
-.sy-controls {
-  display: none;
-  list-style: none;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  padding: 0;
-  margin: 0; }
-  .sy-controls li {
-    position: absolute;
-    width: 10%;
-    min-width: 4.2em;
-    height: 100%;
-    z-index: 33; }
-    .sy-controls li.sy-prev {
-      left: 0;
-      top: 0; }
-      .sy-controls li.sy-prev a:after {
-        background-position: -5% 0; }
-    .sy-controls li.sy-next {
-      right: 0;
-      top: 0; }
-      .sy-controls li.sy-next a:after {
-        background-position: 105% 0; }
-    .sy-controls li a {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: block;
-      text-indent: -9999px; }
-      .sy-controls li a:link, .sy-controls li a:visited {
-        opacity: 0.4; }
-      .sy-controls li a:hover, .sy-controls li a:focus {
-        opacity: 0.8;
-        outline: none; }
-      .sy-controls li a:after {
-        content: "";
-        background-image: url("/images/arrows.svg");
-        background-repeat: no-repeat;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        -webkit-background-size: cover;
-        background-size: cover;
-        text-align: center;
-        text-indent: 0;
-        line-height: 2.8em;
-        color: #111;
-        font-weight: 800;
-        position: absolute;
-        background-color: #fff;
-        width: 2.8em;
-        height: 2.8em;
-        left: 50%;
-        top: 50%;
-        margin-top: -1.4em;
-        margin-left: -1.4em;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%; }
-  @media only screen and (max-device-width: 600px) {
-    .sy-controls {
-      display: block; }
-      .sy-controls li {
-        min-width: 2.1em; }
-        .sy-controls li a:after {
-          width: 1.4em;
-          height: 1.4em;
-          margin-top: -0.7em;
-          margin-left: -0.7em; } }
-
-/* captions, styled fo the overlay variant */
-.sy-caption-wrap {
-  position: absolute;
-  bottom: 2em;
-  z-index: 12;
-  left: 50%; }
-  .sy-caption-wrap .sy-caption {
-    position: relative;
-    left: -50%;
-    background-color: rgba(0, 0, 0, 0.54);
-    color: #fff;
-    padding: 0.4em 1em;
-    -moz-border-radius: 1.2em;
-    -webkit-border-radius: 1.2em;
-    border-radius: 1.2em; }
-    .sy-caption-wrap .sy-caption a:link, .sy-caption-wrap .sy-caption a:visited {
-      color: #e24b70;
-      font-weight: 600;
-      text-decoration: none; }
-    .sy-caption-wrap .sy-caption a:hover, .sy-caption-wrap .sy-caption a:focus {
-      text-decoration: underline; }
-  @media only screen and (max-device-width: 600px), screen and (max-width: 600px) {
-    .sy-caption-wrap {
-      left: 0;
-      bottom: 0.4em; }
-      .sy-caption-wrap .sy-caption {
-        left: 0;
-        padding: 0.2em 0.4em;
-        font-size: 0.92em;
-        -moz-border-radius: 0;
-        -webkit-border-radius: 0;
-        border-radius: 0; } }
-
-/* pager bubbles */
-.sy-pager {
-  overflow: hidden;
-  *zoom: 1;
-  display: block;
-  width: 100%;
-  margin: 1em 0 0;
-  padding: 0;
-  list-style: none;
-  text-align: center; }
-  .sy-pager li {
-    display: inline-block;
-    width: 1.2em;
-    height: 1.2em;
-    margin: 0 1em 0 0;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%; }
-    .sy-pager li.sy-active a {
-      background-color: #e24b70; }
-    .sy-pager li a {
-      width: 100%;
-      height: 100%;
-      display: block;
-      background-color: #ccc;
-      text-indent: -9999px;
-      -moz-background-size: 2em;
-      -o-background-size: 2em;
-      -webkit-background-size: 2em;
-      background-size: 2em;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      border-radius: 50%; }
-      .sy-pager li a:link, .sy-pager li a:visited {
-        opacity: 1.0; }
-      .sy-pager li a:hover, .sy-pager li a:focus {
-        opacity: 0.6; }
-
-/* element to "keep/ fill" the space of the content, gets intrinsic height via js */
-.sy-filler {
-  width: 100%; }
-  .sy-filler.ready {
-    -moz-transition: padding 600ms ease;
-    -o-transition: padding 600ms ease;
-    -webkit-transition: padding 600ms ease;
-    transition: padding 600ms ease; }
+Backtrace:
+/home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss:53:in `transform'
+/home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss:53:in `@content'
+/home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss:26:in `keyframes'
+/home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss:51
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:351:in `block in visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `block in with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:349:in `visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:422:in `block (2 levels) in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:422:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:422:in `block in visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:421:in `visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:384:in `block (3 levels) in visit_content'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:384:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:384:in `block (2 levels) in visit_content'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:383:in `block in visit_content'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `block in with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:379:in `visit_content'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:504:in `block (2 levels) in visit_directive'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:504:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:504:in `block in visit_directive'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:503:in `visit_directive'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:366:in `block (4 levels) in visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:366:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:366:in `block (3 levels) in visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:366:in `block (2 levels) in visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:84:in `perform_arguments'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:361:in `block in visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `block in with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `with_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:349:in `visit_mixin'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:281:in `render'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'transform'.\A         on line 53 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss, in `transform'\A         from line 53 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss, in `@content'\A         from line 26 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss, in `keyframes'\A         from line 51 of /home/reliq/Studio/Code/slippry-no-compass/src/slippry.scss\A \A 48: }\A 49: \A 50: /* kenBurns animations, very basic */\A 51: @include keyframes(left-right) {\A 52:   0% {\A 53:     @include transform(translateY(-20%) translateX(-10%));\A 54:   }\A 55:   100% {\A 56:     @include transform(translateY(0%) translateX(10%));\A 57:   }\A 58: }"; }

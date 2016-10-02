@@ -1,7 +1,7 @@
 {
   "name": "slippry-no-compass",
   "description": "A fork of the official Slippry plugin without explicit compass requirement. For use with other build systems such as webpack.",
-  "version": "v1.3.1",
+  "version": "v1.2.3",
   "author": "ReliQ <reliq@reliqarts.com>",
   "homepage": "http://dev.reliqarts.com",
   "repository": {

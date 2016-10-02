@@ -1,15 +1,16 @@
 {
-  "name": "slippry",
-  "version": "v1.3.1",
-  "homepage": "http://slippry.com",
+  "name": "slippry-no-compass",
+  "version": "v1.2.3",
+  "homepage": "http://dev.reliqarts.com",
   "authors": [
+    "ReliQ - @IAmReliQ",
     "Lukas Jakob Hafner - @saftsaak",
     "Thomas Hurd - @SeenNotHurd"
   ],
-  "description": "Responsive content slider for jQuery",
+  "description": "A fork of the official Slippry plugin without explicit compass requirement. For use with other build systems such as webpack.",
   "main": [
-    "dist/slippry.min.js",
-    "dist/slippry.css",
+    "src/slippry.js",
+    "src/slippry.css",
     "images/arrows.svg",
     "images/sy-loader.gif"
   ],
